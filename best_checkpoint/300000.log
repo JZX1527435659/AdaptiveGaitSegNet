@@ -1,0 +1,33 @@
+=== 开始 iter=300000 @ 2025-06-11 13:05:21.647994 ===
+[Init] Initializing model and data...
+🔧 Initializing...
+Initializing data source...
+[Partition] Loaded partition file: partition\CASIA-B_12_False.npy
+✅ Data initialization complete.
+Initializing model...
+Traceback (most recent call last):
+  File "test.py", line 34, in <module>
+    model = initialization(conf, test=opt.cache)[0]
+  File "C:\Users\User\Desktop\GaitSet-master\modelfile\initialization.py", line 91, in initialization
+    return initialize_model(config, train_source, test_source)
+  File "C:\Users\User\Desktop\GaitSet-master\modelfile\initialization.py", line 69, in initialize_model
+    m = Model(**model_param)
+  File "C:\Users\User\Desktop\GaitSet-master\modelfile\model.py", line 61, in __init__
+    self.encoder.cuda()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\torch\nn\modules\module.py", line 916, in cuda
+    return self._apply(lambda t: t.cuda(device))
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\torch\nn\modules\module.py", line 780, in _apply
+    module._apply(fn)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\torch\nn\modules\module.py", line 780, in _apply
+    module._apply(fn)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\torch\nn\modules\module.py", line 780, in _apply
+    module._apply(fn)
+  [Previous line repeated 1 more time]
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\torch\nn\modules\module.py", line 805, in _apply
+    param_applied = fn(param)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\torch\nn\modules\module.py", line 916, in <lambda>
+    return self._apply(lambda t: t.cuda(device))
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\torch\cuda\__init__.py", line 305, in _lazy_init
+    raise AssertionError("Torch not compiled with CUDA enabled")
+AssertionError: Torch not compiled with CUDA enabled
+=== 结束 iter=300000 code=1 @ 2025-06-11 13:05:49.695792 ===
