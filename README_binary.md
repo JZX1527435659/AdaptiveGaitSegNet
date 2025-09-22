@@ -31,7 +31,7 @@ AdaptiveGaitSegNet\
 │   ├── data_set_binary.py
 │   ├── gaitset_focal_edge.py
 │   ├── initialization_binary.py
-│   ├── AdaptiveGaitSegNet.py
+│   ├── AdaptiveGaitSegNet_binary.py
 │   └── sampler.py
 ├── output\
 ├── work\
