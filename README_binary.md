@@ -1,4 +1,4 @@
-# AdaptiveGaitSegNet
+# model_binary
 
 ## Project structure
 
