@@ -1,3 +1,4 @@
+
 # gaitset_focal_edge.py
 # 集成焦点卷积(Focal Convolution)和边缘感知池化(Edge-Aware Pooling)的GaitSet网络实现
 # 该网络结合了焦点卷积和可变形池化来增强步态识别性能
@@ -20,7 +21,7 @@ class SetNet(nn.Module):
     def __init__(self, hidden_dim, num_classes):
         super(SetNet, self).__init__()
         self.hidden_dim = hidden_dim  # 输出特征维度
-        self.num_classes = num_classes
+        self.num_classes = num_classes #新增
         self.batch_frame = None  # 用于存储变长序列的帧索引
 
         # SetBranch(帧级分支)配置
@@ -62,7 +63,7 @@ class SetNet(nn.Module):
                 nn.init.xavier_uniform_(
                     torch.zeros(sum(self.bin_num) * 2, 128, hidden_dim)))])
 
-        # 分类头
+        # 新增分类头
         self.classifier = nn.Linear(hidden_dim, num_classes)
         self._initialize_weights()
 
@@ -77,7 +78,7 @@ class SetNet(nn.Module):
                 nn.init.normal(m.weight.data, 1.0, 0.02)
                 nn.init.constant(m.bias.data, 0.0)
 
-    def _initialize_weights(self):  # #
+    def _initialize_weights(self):  # 新增
         for m in self.modules():
             if isinstance(m, (nn.Conv2d, nn.Conv1d)):
                 nn.init.xavier_uniform_(m.weight.data)
@@ -128,37 +129,33 @@ class SetNet(nn.Module):
             return median_list, arg_median_list
 
     def forward(self, silho, batch_frame=None):
-        """网络前向传播函数
-        参数：
-            silho: 输入步态轮廓序列,形状为(N, S, H, W)
-            batch_frame: 可选,各样本实际帧数列表
-        返回：
-            feature: 提取的步态特征,形状为(N, 62, hidden_dim)
-            None: 占位返回值
-        """
-        if self.batch_frame is None:  # 无变长,batch 里所有样本长度相同 ,即帧数相同
-            return torch.max(x, 1)  # (N,S,C,H,W)→(N,C,H,W) 最大值及索引
-        else:  # self.batch_frame 是一个长度为 N+1 的 list：[0, f1, f1+f2, … , f_total],
-            # f_i 表示第 i 个样本的真实帧数
-            _tmp = [
-                torch.max(x[:, self.batch_frame[i]:self.batch_frame[i + 1], :, :, :], 1)
-                for i in range(len(self.batch_frame) - 1)
-            ]  # 逐段求最大
+            """网络前向传播函数
+            参数：
+                silho: 输入步态轮廓序列,形状为(N, S, H, W)
+                batch_frame: 可选,各样本实际帧数列表
+            返回：
+                feature: 提取的步态特征,形状为(N, 62, hidden_dim)
+                None: 占位返回值
             """
-            切片 x[:, start:end, :, :, :] 取第 i 个样本的全部帧,形状 (1, f_i, C, H, W)。
-            torch.max(..., 1) 在帧维求最大( 同一像素位置在所有帧上取最大值),返回 (1, C, H, W) 的最大值和索引。
-            结果 _tmp 是长度为 N 的 list,每个元素是一个 tuple：(max_tensor, argmax_tensor)。
-            """
-            max_list = torch.cat([_tmp[i][0] for i in range(len(_tmp))], 0)  # 拼接最大值
-            arg_max_list = torch.cat([_tmp[i][1] for i in range(len(_tmp))], 0)  # 拼接索引
-            """
-            把 N 段结果重新拼回 batch 维
-            torch.cat(..., 0) 在第 0 维拼接,把 N 个 (1,C,H,W) 拼成 (N,C,H,W)。
-            """
-            return max_list, arg_max_list  # max_list：最大值 Tensor (N, C, H, W)
-            # arg_max_list：最大值在帧维度的索引 (N, C, H, W)
+            if self.batch_frame is None:  # 无变长,batch 里所有样本长度相同 ,即帧数相同
+                return torch.max(x, 1)  # (N,S,C,H,W)→(N,C,H,W) 最大值及索引
+            else:  # self.batch_frame 是一个长度为 N+1 的 list：[0, f1, f1+f2, … , f_total],
+                # f_i 表示第 i 个样本的真实帧数
+                _tmp = [
+                    torch.max(x[:, self.batch_frame[i]:self.batch_frame[i + 1], :, :, :], 1)
+                    for i in range(len(self.batch_frame) - 1)
+                ]  # 逐段求最大
 
-    def frame_median(self, x):  # 帧维度中位数(同上结构,未使用)
+                max_list = torch.cat([_tmp[i][0] for i in range(len(_tmp))], 0)  # 拼接最大值
+                arg_max_list = torch.cat([_tmp[i][1] for i in range(len(_tmp))], 0)  # 拼接索引
+            
+                return max_list, arg_max_list  # max_list：最大值 Tensor (N, C, H, W)
+                # arg_max_list：最大值在帧维度的索引 (N, C, H, W)
+
+    
+
+    def frame_median(self, x):
+        """帧维度中位数池化(结构与frame_max相同,但实际未使用)"""
         if self.batch_frame is None:
             return torch.median(x, 1)
         else:
@@ -264,8 +261,8 @@ class SetNet(nn.Module):
         # 恢复批次维度为第一维,得到最终特征形状(N, 62, hidden_dim)
         feature = feature.permute(1, 0, 2).contiguous()
 
-        # 分类预测
-        label_prob = self.classifier(feature.mean(dim=1))   # ####
+        # 新增分类预测 - 输出原始logits，Softmax在损失函数中处理
+        label_prob = self.classifier(feature.mean(dim=1))
 
-        # 返回提取的步态特征和label_prob占位符
+        # 返回提取的步态特征和概率分布
         return feature, label_prob
