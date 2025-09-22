@@ -1,10 +1,10 @@
 conf = {
-    "WORK_PATH": r"C:\\Users\\User\\Desktop\\zwc-GaitSet-master\\work",
+    "WORK_PATH": r"C:\\Users\\User\\Desktop\\GaitSet-master\\work",
     "CUDA_VISIBLE_DEVICES": "0",
 
     # 数据相关配置（适配 GAIT-IST 预处理后的目录结构 gaitist_output）
     "data": {
-        'dataset_path': r"C:\\Users\\User\\Desktop\\zwc-GaitSet-master\\gaitist_output",
+        'dataset_path': r"C:\\Users\\User\\Desktop\\GaitSet-master\\gaitist_output",
         'resolution': '64',             # 输入分辨率（保持与原网络一致）
         'dataset': 'GAIT-IST',          # 仅用于保存与日志标识
         'pid_num': 2,                   # 二分类：正常(0)/帕金森(1)
@@ -36,3 +36,4 @@ conf = {
 
 
        
+
