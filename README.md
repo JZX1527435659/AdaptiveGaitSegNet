@@ -1,4 +1,4 @@
-# model_binary
+# AdaptiveGaitSegNet: An Innovative Model with Advanced Feature Extraction for Enhanced Parkinson's Disease Gait Recognition
 
 ## Project structure
 
@@ -64,6 +64,7 @@ AdaptiveGaitSegNet\
 
 ### Dataset & Preparation
 Download [GAIT-IST Dataset](http://www.img.lx.it.pt/GAIT-IST/)
+Download [GAIT-IT Dataset](http://www.img.lx.it.pt/GAIT-IT/)
 
 **!!! ATTENTION !!! ATTENTION !!! ATTENTION !!!**
 
