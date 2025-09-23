@@ -3,7 +3,7 @@
 ## Project structure
 
 ```
-AdaptiveGaitSegNet4PD\
+AdaptiveGaitSegNet\
 ├── README.md
 ├── __pycache__\
 ├── .idea\
