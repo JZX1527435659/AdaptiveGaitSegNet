@@ -4,7 +4,7 @@
 
 ```
 AdaptiveGaitSegNet\
-├── README_binary.md
+├── README.md
 ├── __pycache__\
 ├── .idea\
 ├── gaitist_output\           
