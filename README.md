@@ -146,8 +146,8 @@ Evaluate the trained model by
 ```bash
 python test_binary.py
 ```
-- `--iter` iteration of the checkpoint to load. #Default: 10000
-- `--batch_size` batch size of the parallel test. #Default: 1
+- `--iter` iteration of the checkpoint to load. #Default: 80000
+- `--batch_size` batch size of the parallel test. #Default: 8
 - `--cache` if set as TRUE all the test data will be loaded at once before the transforming start.
 This might accelerate the testing. #Default: FALSE
 
