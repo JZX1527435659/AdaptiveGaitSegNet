@@ -56,16 +56,20 @@ AdaptiveGaitSegNet\
 ├── demo_checkpoint\
 ├── .gitignore
 ├── LICENSE
-├── config_binary.py
+├── checkpoint_leverage.py
+├── config.py
+├── gait_synthesis.py
 ├── pretreatment.py
+├── pretreatment.log
+├── pretreatment_rotate.py
 ├── requirements.txt
-├── test_binary.py
-├── config_binary.py
-├── test_binary.py
-├── test_binary.py
-├── config_binary.py
-├── config_binary.py
-└── train_binary.py
+├── test_ALL.py
+├── test_BEST.py
+├── test_COPY.py
+├── test_FAST.py
+├── test_log.txt
+├── train.py
+└── video.py
 
 ```
 
