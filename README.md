@@ -1,4 +1,4 @@
-# AdaptiveGaitSegNet: An Innovative Model with Advanced Feature Extraction for Enhanced  the  Accuracy of Walking Gait recognition.
+# AdaptiveGaitSegNet: An Innovative Model with Advanced Feature Extraction for Enhanced Walking Gait recognition.
 ## Project structure
 
 ```
