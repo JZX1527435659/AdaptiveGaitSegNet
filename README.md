@@ -93,7 +93,7 @@ AdaptiveGaitSegNet\
 - Install [PyTorch](http:\ \ pytorch.org\ )
 
 ### Dataset & Preparation
-Download [CASIA-B](http://www.cbsr.ia.ac.cn/GaitDatasetB-silh.zip)
+Download [CASIA](http://www.cbsr.ia.ac.cn/users/szheng/?page_id=71)
 Download [OU-MVLP](http://www.am.sanken.osaka-u.ac.jp/BiometricDB/GaitMVLP.html)
 
 **!!! ATTENTION !!! ATTENTION !!! ATTENTION !!!**
