@@ -1,4 +1,4 @@
-# AdaptiveGaitSegNet: An Innovative Model with Advanced Feature Extraction for Enhanced  the Gait recognition Accuracy of Normal, Bag, and Coat.
+# AdaptiveGaitSegNet: An Innovative Model with Advanced Feature Extraction for Enhanced  the  Accuracy of Walking Gait recognition.
 ## Project structure
 
 ```
@@ -101,8 +101,8 @@ Download [OU-MVLP](http://www.am.sanken.osaka-u.ac.jp/BiometricDB/GaitMVLP.html)
 Before training or test, please make sure you have prepared the dataset
 by this two steps:
 - **Step1:** Organize the directory as: 
-`your_dataset_path\process type\subject_ids\image_type\views\imge`.
-E.g. `GaitDatasetA-silh\pretreatment\sub1\silhouettes\sub1normal-1_back\000106.png `.
+`your_dataset_path\process_type\subject_id\walking_status\view_angle\imge`.
+E.g. `GaitDatasetA-silh\pretreatment\001\bg-01\018\001-bg-01-018-001.png `.
 - **Step2:** Cut and align the raw silhouettes with `pretreatment.py`.
 (See [pretreatment](#pretreatment) for details.)
 Welcome to try different ways of pretreatment but note that
