@@ -127,7 +127,7 @@ Otherwise, only warnings and errors will be saved. #Default: False
 ### Configuration 
 In `config_binary.py`, you might want to change the following settings:
 - `dataset_path` **(NECESSARY)** root path of the dataset 
-(for the above example, it is "gaitdata")
+(for the above example, it is "output_synthesis_rotate")
 - `WORK_PATH` path to save\ load checkpoints
 - `CUDA_VISIBLE_DEVICES` indices of GPUs
 
