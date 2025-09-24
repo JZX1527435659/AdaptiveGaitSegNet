@@ -94,7 +94,7 @@ AdaptiveGaitSegNet\
 
 ### Dataset & Preparation
 Download [CASIA-B](http://www.cbsr.ia.ac.cn/GaitDatasetB-silh.zip)
-Download [GAIT-IT Dataset](http://www.img.lx.it.pt/GAIT-IT/)
+Download [OU-MVLP](http://www.am.sanken.osaka-u.ac.jp/BiometricDB/GaitMVLP.html)
 
 **!!! ATTENTION !!! ATTENTION !!! ATTENTION !!!**
 
