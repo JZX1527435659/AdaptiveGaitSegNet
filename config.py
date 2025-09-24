@@ -1,9 +1,9 @@
 conf = {
-    "WORK_PATH": r"C:\Users\User\Desktop\zwc-GaitSet-master\work",
+    "WORK_PATH": r"C:\Users\User\Desktop\GaitSet-master\work",
     "CUDA_VISIBLE_DEVICES": "0",
 
     "data": {
-        'dataset_path': r"C:\Users\User\Desktop\wyx-GaitSet-master\GaitDatasetA-silh\output_synthesis_rotate",
+        'dataset_path': r"C:\Users\User\Desktop\GaitSet-master\GaitDatasetA-silh\output_synthesis_rotate",
         'resolution': '64',             # 图片分辨率，默认即可
         'dataset': 'CASIA-B',
         'pid_num': 12,                  # 每个 batch 中的不同行人数量，建议设小一点
