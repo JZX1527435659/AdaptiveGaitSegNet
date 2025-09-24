@@ -134,7 +134,7 @@ In `config_binary.py`, you might want to change the following settings:
 ### Train
 Train a model by
 ```bash
-python train_binary.py
+python train.py
 ```
 - `--cache` if set as TRUE all the training data will be loaded at once before the training start.
 This will accelerate the training.
