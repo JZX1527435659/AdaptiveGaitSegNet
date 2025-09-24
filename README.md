@@ -93,7 +93,7 @@ AdaptiveGaitSegNet\
 - Install [PyTorch](http:\ \ pytorch.org\ )
 
 ### Dataset & Preparation
-Download [GAIT-IST Dataset](http://www.img.lx.it.pt/GAIT-IST/)
+Download [CASIA-B](http://www.cbsr.ia.ac.cn/GaitDatasetB-silh.zip)
 Download [GAIT-IT Dataset](http://www.img.lx.it.pt/GAIT-IT/)
 
 **!!! ATTENTION !!! ATTENTION !!! ATTENTION !!!**
