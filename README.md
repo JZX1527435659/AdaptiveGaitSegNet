@@ -55,11 +55,18 @@ AdaptiveGaitSegNet\
 ├── work\
 ├── demo_checkpoint\
 ├── .gitignore
+├── LICENSE
 ├── config_binary.py
 ├── pretreatment.py
 ├── requirements.txt
 ├── test_binary.py
+├── config_binary.py
+├── test_binary.py
+├── test_binary.py
+├── config_binary.py
+├── config_binary.py
 └── train_binary.py
+
 ```
 
 ## Prerequisites
