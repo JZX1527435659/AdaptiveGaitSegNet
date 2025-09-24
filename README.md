@@ -92,25 +92,6 @@ AdaptiveGaitSegNet\
 - install [cuDNN7.0](https:\ \ developer.nvidia.com\ cudnn)
 - Install [PyTorch](http:\ \ pytorch.org\ )
 
-## Datasets and Preprocessing
-
-**Data sources:**
-
-* **GSE199219:** scRNA-seq + CITE-seq for cell-type-specific expression and surface markers.
-* **GSE168026:** scATAC-seq for TF motif inference and chromatin state.
-* **TCGA-BRCA:** Bulk RNA-seq for survival modeling.
-* **TCIA Radiomics:** Handcrafted image features from segmented MRI/CT scans.
-* **STRING, HGD, CellPhoneDB:** Protein-protein interactions, homologous genes, ligand–receptor edges.
-
-**Key preprocessing steps:**
-
-* *scRNA-seq*: Cells filtered if genes detected <200 or >7,500; >20% mitochondrial content excluded; normalized by log transform; scaled with variable genes; cell-cycle effect regressed out.
-* *scATAC-seq*: Processed by **CellRanger-ATAC**, integrated via *Seurat* + *Signac*; QC by unique fragments, % reads in peaks, TSS enrichment, nucleosomal signal.
-* *Radiomics*: 35 handcrafted features projected into the same latent space as the transcriptome by **Canonical Correlation Analysis (CCA)**.
-
----
-
-
 ### Dataset & Preparation
 Download [CASIA](http://www.cbsr.ia.ac.cn/users/szheng/?page_id=71)
 Download [OU-MVLP](http://www.am.sanken.osaka-u.ac.jp/BiometricDB/GaitMVLP.html)
