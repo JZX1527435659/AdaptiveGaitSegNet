@@ -80,7 +80,10 @@ the silhouettes after pretreatment **MUST have a size of 64x64**.
 
 #### Pretreatment
 `pretreatment.py` uses the alignment method in
-[this paper](https:\ \ ipsjcva.springeropen.com\ articles\ 10.1186\ s41074-018-0039-6).
+[this paper](https:\ \ ipsjcva.springeropen.com\ articles\ 10.1186\ s41074-018-0039-6). Filter out invalid frames, standardize the image size and alignment method, and provide high-quality input data for subsequent gait feature extraction and model training. 
+- **Input:** The original gait contour images in the `input_path` directory. Please organize them in a three-level directory structure as `ID→Sequence Type→View Angle`.
+E.g. `sub1\silhouettes\sub1normal-1_back`.
+- **Output:** The standardized images in the `output_path` directory. The dimensions are uniformly set to 64×64, and only the valid human contour area is retained.
 Pretreatment your dataset by
 ```
 python pretreatment.py --video_root='root_path_of_raw_video' --pretreatment_root='root_path_for_video_output' --synthesis_root='root_path_for_synthesis_output' --final_output_root='root_path_for_final_pretreated_output'
