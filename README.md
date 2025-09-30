@@ -37,7 +37,7 @@ AdaptiveGaitSegNet\
 ├── work\
 ├── .gitignore
 ├── config_binary.py
-├── pretreatment.py
+├── pretreatment_rotate.py
 ├── requirements.txt
 ├── test_binary.py
 └── train_binary.py
