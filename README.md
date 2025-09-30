@@ -84,25 +84,6 @@ the silhouettes after pretreatment **MUST have a size of 64x64**.
 
 The execution sequence of the preprocessing code should be `video.py → gait_synthesis_visualization.py → pretreatmenr_rotate.py`
 
-`video.py` extract the basic silhouette frames from the RGB video, clean up the background and noise, and form a standard three-level directory structure. `video.py` solve the reliable extraction from the original RGB video to the silhouette.
-
-Pretreatment your dataset by
-```
-python video.py --video_root="D:\data\Dataset" --output_root=".\output\pretreatment"
-```
-- `--video_root` **(NECESSARY)** Recursively search for all video files under the `--video_root` directory, Please organize them in a four-level directory structure as `.mp4/.avi/.mov/.mkv`.
-- `--output_root` **(NECESSARY)** Root path for saving the silhouette frames extracted from the video, with the structure as `output_root/ID/Type Directory/Video Sequence Number/`
-
-`gait_synthesis_visualization.py.py` perform mask decomposition and reconstruction on the silhouette, synthesize the enhanced-edge silhouette result, and save the intermediate visualization for inspection.
-
-Pretreatment your dataset by
-```
-python gait_synthesis_visualization.py --input_root=".\output\pretreatment" --output_root=".\output\output_synthesis" --visual_output_root=".\output\visualization"
-```
-- `--input_root` **(NECESSARY)** Root path that use the `--output_root` directory by `video.py` as the root directory of the three-layer structure for input.
-- `--output_root` **(NECESSARY)** Root path for saving the synthesized silhouette with the same structure form as the `--input_root`. E.g. `input_root\001\seq1\090\frame_00012.png` → `output_root\001\seq1\090\frame_00012.png`
-- `--visual_output_root` **(NECESSARY)** Root path for save the intermediate visual results.
-
 `pretreatment_rotate.py` perform geometric alignment and orientation correction on the synthesized silhouette, and unify it to 64×64 to ensure the spatio-temporal consistency of the input model.
 
 Pretreatment your dataset by
