@@ -82,7 +82,7 @@ the silhouettes after pretreatment **MUST have a size of 64x64**.
 
 **!!! ATTENTION !!! ATTENTION !!! ATTENTION !!!**
 
-The execution sequence of the preprocessing code should be `video.py → gait_synthesis_visualization.py → pretreatmenr_rotate.py`
+The execution sequence of the preprocessing code should be `extract_video_frames_separate.py → gait_synthesis_visualization.py → pretreatmenr_rotate.py`
 
 `pretreatment_rotate.py` perform geometric alignment and orientation correction on the synthesized silhouette, and unify it to 64×64 to ensure the spatio-temporal consistency of the input model.
 
