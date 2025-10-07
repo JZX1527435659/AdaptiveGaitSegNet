@@ -16,7 +16,7 @@ For detailed instructions of `Mask R-CNN`, please refer to the `README.md` in th
 
 Pretreatment your dataset by
 ```
-python extract_video_frames_separate.py --VIDEO_PATH = ".\Mask_RCNN-master\video.mp4"
+python extract_video_frames_separate.py --VIDEO_PATH = ".\Mask_RCNN-master\video.mp4" 
 ```
 - `--VIDEO_PATH` **(NECESSARY)** Root path for input video
 
