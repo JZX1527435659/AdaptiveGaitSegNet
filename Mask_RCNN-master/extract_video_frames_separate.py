@@ -38,7 +38,7 @@ print(f"检测尺寸：{config.IMAGE_MIN_DIM}~{config.IMAGE_MAX_DIM} | 输出尺
 
 # 2. 模型加载
 MODEL_DIR = "./model_cache"
-COCO_MODEL_PATH = r"C:\Users\User\Desktop\wyx-GaitSet-master\Mask_RCNN-master\mask_rcnn_coco.h5"
+COCO_MODEL_PATH = r"C:\Users\User\Desktop\GaitSet-master\Mask_RCNN-master\mask_rcnn_coco.h5"
 
 if not os.path.exists(COCO_MODEL_PATH):
     raise FileNotFoundError(
@@ -180,4 +180,5 @@ def extract_video_frames(video_path, output_root):
 # 5. 主函数
 if __name__ == "__main__":
     VIDEO_PATH = r"C:\Users\User\Desktop\Mask_RCNN-master\video.mp4"
+
     extract_video_frames(VIDEO_PATH, output_root="video_output")
