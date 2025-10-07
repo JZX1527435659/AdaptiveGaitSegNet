@@ -18,7 +18,7 @@ Pretreatment your dataset by
 ```
 python extract_video_frames_separate.py --VIDEO_PATH = ".\Mask_RCNN-master\video.mp4"
 ```
-- `--VIDEO_PATH` **(NECESSARY)** Root path for Input video
+- `--VIDEO_PATH` **(NECESSARY)** Root path for input video
 
 `gait_synthesis_visualization.py.py` perform mask decomposition and reconstruction on the silhouette, synthesize the enhanced-edge silhouette result, and save the intermediate visualization for inspection.
 
