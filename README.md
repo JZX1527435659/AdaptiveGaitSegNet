@@ -7,7 +7,7 @@ AdaptiveGaitSegNet\
 ├── README.md
 ├── __pycache__\
 ├── .idea\
-├── gaitist_output\           
+├── gaitset_output\           
 │   ├── pre_normal\           
 │   │   ├── sub1\ 
 │   │   │   ├── GEIs\ 
